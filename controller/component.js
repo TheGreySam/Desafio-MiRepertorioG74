@@ -9,12 +9,12 @@ const home = (req, res) => {
     res.status(200).sendFile(main);
 };
 
-const readSong = (req, res) => {
+const leerCanciones = (req, res) => {
     const articles = JSON.parse(fs.readFileSync(JSON_FILE, 'utf8'));
     res.status(200).json(articles);
 };
 
-const insertSong = (req, res) => {
+const insertarCancion = (req, res) => {
     const article = req.body;
     const articles = JSON.parse(fs.readFileSync(JSON_FILE, 'utf8'));
     articles.push(article);
@@ -22,7 +22,7 @@ const insertSong = (req, res) => {
     res.status(201).send(`Canción agregada, id: ${article.id}, titulo: ${article.title}, artista: ${article.artist}`);
 };
 
-const deleteSong = (req, res) => {
+const BorrarCancion = (req, res) => {
     const { id } = req.params;
     const article = req.body;
     const articles = JSON.parse(fs.readFileSync(JSON_FILE));
@@ -38,7 +38,7 @@ const deleteSong = (req, res) => {
     res.status(200).send(`Canción id: ${article.id}, ${article.title}, artista: ${article.artist} eliminada`);
 };
 
-const editSong = (req, res) => {
+const editarCancion = (req, res) => {
     const { id } = req.params;
     const article = req.body;
     const articles = JSON.parse(fs.readFileSync(JSON_FILE));
@@ -56,8 +56,8 @@ const editSong = (req, res) => {
 
 module.exports = {
     home,
-    readSong,
-    insertSong,
-    deleteSong,
-    editSong,
+    leerCanciones,
+    insertarCancion,
+    BorrarCancion,
+    editarCancion
 };
