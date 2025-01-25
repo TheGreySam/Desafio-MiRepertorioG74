@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/TheGreySam/Desafio-MiRepertorioG74/issues"
   },
-  "homepage": "https://github.com/TheGreySam/Desafio-MiRepertorioG74#readme"
+  "homepage": "https://github.com/TheGreySam/Desafio-MiRepertorioG74#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
 }
